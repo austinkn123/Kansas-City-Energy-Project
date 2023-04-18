@@ -112,8 +112,9 @@ public class EnergyProjGUI extends JFrame {
         private AddCustomer AddCustomerPanel = new AddCustomer();
         private UpdateCustomer UpdateCustomerPanel = new UpdateCustomer();
         private DeleteCustomer DeleteCustomerPanel = new DeleteCustomer();
+        private SearchCustomer Search = new SearchCustomer();
         private JPanel DashboardPanel = new JPanel();
-        private JPanel Search = new JPanel();
+//        private JPanel Search = new JPanel();
         private JPanel Billing = new JPanel();
 
         private JButton LogoutButton = new JButton("Log Out");

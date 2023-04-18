@@ -10,15 +10,6 @@ public interface ICustomer {
     public void setAddress(String Address);
     public String getAddress();
 
-    public void setUserName(String UserName);
-    public String getUserName();
-
-    public void setPassword(String Password);
-    public String getPassword();
-
-    public void setBalance(double Balance);
-    public double getBalance();
-
     public void setMeterType(String MeterType);
     public String getMeterType();
 
