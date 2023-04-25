@@ -9,7 +9,7 @@ public class SearchCustomer extends JPanel {
     private JPanel SearchCustomerPanel = new JPanel();
     public SearchCustomer() {
         setLayout(new BorderLayout());
-        SearchCustomerPanel.setLayout(new GridLayout(9, 2));
+        SearchCustomerPanel.setLayout(new GridLayout(12, 2));
         add(SearchCustomerPanel, BorderLayout.CENTER);
 
         JLabel IDLabel = new JLabel("ID:");
@@ -20,6 +20,10 @@ public class SearchCustomer extends JPanel {
         JLabel AddressLabel = new JLabel();
         JLabel MeterLabel = new JLabel();
         JLabel TariffLabel = new JLabel();
+        JLabel GasLabel = new JLabel();
+        JLabel ElectricityLabel = new JLabel();
+        JLabel WaterLabel = new JLabel();
+        JLabel AirConditionLabel = new JLabel();
 
         IDLabel.setFont(new Font("Arial", Font.BOLD, 14));
         SearchCustomerPanel.add(IDLabel);
@@ -47,6 +51,16 @@ public class SearchCustomer extends JPanel {
         SearchCustomerPanel.add(MeterLabel);
         SearchCustomerPanel.add(new JLabel("Energy Tariff: "));
         SearchCustomerPanel.add(TariffLabel);
+        SearchCustomerPanel.add(new JLabel("Meter Readings (Usage): "));
+        SearchCustomerPanel.add(new JLabel());
+        SearchCustomerPanel.add(new JLabel("Gas: "));
+        SearchCustomerPanel.add(GasLabel);
+        SearchCustomerPanel.add(new JLabel("Electricity: "));
+        SearchCustomerPanel.add(ElectricityLabel);
+        SearchCustomerPanel.add(new JLabel("Water: "));
+        SearchCustomerPanel.add(WaterLabel);
+        SearchCustomerPanel.add(new JLabel("Air Conditioning: "));
+        SearchCustomerPanel.add(AirConditionLabel);
 
         Search.addActionListener(new ActionListener() {
             @Override

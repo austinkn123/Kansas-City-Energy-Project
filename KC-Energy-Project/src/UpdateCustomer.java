@@ -23,7 +23,7 @@ public class UpdateCustomer extends JPanel {
         JTextField NameField = new JTextField();
         JTextField PhoneNumField = new JTextField();
         JTextField AddressField = new JTextField();
-        JComboBox<String> MeterTypeCombo = new JComboBox<>(new String[] {"Electricity", "Gas", "Water", "Heat/Cool"});
+        JComboBox<String> MeterTypeCombo = new JComboBox<>(new String[] {"Industrial", "Residential", "Commercial", "Government"});
         JButton UpdateCustomerButton = new JButton("Update Customer");
 
         IDLabel.setFont(new Font("Arial", Font.BOLD, 14));
@@ -94,16 +94,16 @@ public class UpdateCustomer extends JPanel {
                 int EnergyTariff = 0;
                 // get selected item and decides the billing based on the meter type
                 String selected = (String) MeterTypeCombo.getSelectedItem();
-                if (selected.equals("Heat/Cool")) {
+                if (selected.equals("Residential")) {
                     EnergyTariff = 100;
                 }
-                else if (selected.equals("Water")) {
+                else if (selected.equals("Commercial")) {
                     EnergyTariff = 200;
                 }
-                else if (selected.equals("Gas")) {
+                else if (selected.equals("Government")) {
                     EnergyTariff = 300;
                 }
-                else if (selected.equals("Electricity")) {
+                else if (selected.equals("Industrial")) {
                     EnergyTariff = 400;
                 }
 

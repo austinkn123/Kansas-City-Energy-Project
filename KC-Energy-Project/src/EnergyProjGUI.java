@@ -112,10 +112,10 @@ public class EnergyProjGUI extends JFrame {
         private AddCustomer AddCustomerPanel = new AddCustomer();
         private UpdateCustomer UpdateCustomerPanel = new UpdateCustomer();
         private DeleteCustomer DeleteCustomerPanel = new DeleteCustomer();
+
+        private AddBill AddBillingPanel = new AddBill();
         private SearchCustomer Search = new SearchCustomer();
         private JPanel DashboardPanel = new JPanel();
-//        private JPanel Search = new JPanel();
-        private JPanel Billing = new JPanel();
 
         private JButton LogoutButton = new JButton("Log Out");
 
@@ -134,8 +134,8 @@ public class EnergyProjGUI extends JFrame {
 
 
             tabbedPane.addTab("Home", DashboardPanel);
-            tabbedPane.addTab("Search Customer", Search);
-            tabbedPane.addTab("Billing", Billing);
+            tabbedPane.addTab("Customer Info", Search);
+            tabbedPane.addTab("Billing Invoice", AddBillingPanel);
             tabbedPane.addTab("Add Customer", AddCustomerPanel);
             tabbedPane.addTab("Update Customer", UpdateCustomerPanel);
             tabbedPane.addTab("Delete Customer", DeleteCustomerPanel);
@@ -155,7 +155,6 @@ public class EnergyProjGUI extends JFrame {
 
     public static void main(String[] args) {
         EnergyProjGUI app = new EnergyProjGUI();
-
     }
 
 }
