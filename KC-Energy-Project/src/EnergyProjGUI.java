@@ -57,7 +57,7 @@ public class EnergyProjGUI extends JFrame {
 
         LoginPanel.add(LoginButton);
 
-        setSize(500, 300);
+        setSize(700, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
 

@@ -1,4 +1,6 @@
 import java.sql.*; // Needed for JDBC classes
+import java.util.ArrayList;
+import java.util.List;
 
 public class CRUDBilling{
     // Create a named constant for the URL.
@@ -48,8 +50,10 @@ public class CRUDBilling{
         }
     }
 
-    public Billing getBill(int customerID) {
+    public ArrayList<Billing> getBill(int customerID) {
         try {
+//            List of bills
+            ArrayList<Billing> bills = new ArrayList<Billing>();
             // Create a connection to the database.
             Connection connection = DriverManager.getConnection(DatabaseURL, Username, Password);
             System.out.println("Connection created to customer.");
@@ -61,7 +65,7 @@ public class CRUDBilling{
             // Execute the SQL statement and retrieve the matching row
             ResultSet resultSet = statement.executeQuery();
 
-            if (resultSet.next()) {
+            while (resultSet.next()) {
                 // Retrieve the values of the columns in the matching row
                 int billingId = resultSet.getInt("billingID");
                 int billingAmt = resultSet.getInt("billingAmt");
@@ -72,15 +76,14 @@ public class CRUDBilling{
                 int AirCondition = resultSet.getInt("AirCondition");
                 int paid = resultSet.getInt("paid");
                 // Do something with the retrieved values
-                System.out.println(billingId + "\n" + billingAmt + "\n" + customerId + "\n" + Gas + "\n" + Electricity + "\n" + Water + "\n" + AirCondition + "\n" + paid);
-                return new Billing(billingId, billingAmt, customerId, Gas, Electricity, Water, AirCondition, paid);
-            } else {
-                System.out.println("No matching rows found");
+//                System.out.println(billingId + "," + billingAmt + "," + customerId + "," + Gas
+//                        + "," + Electricity + "," + Water + "," + AirCondition + "," + paid);
+                bills.add(new Billing(billingId, billingAmt, customerId, Gas, Electricity, Water, AirCondition, paid));
             }
             // close connection
             connection.close();
             System.out.println("Connection closed.");
-
+            return bills;
 
         } catch (Exception e) {
             System.out.println("ERROR: " + e.getMessage());
