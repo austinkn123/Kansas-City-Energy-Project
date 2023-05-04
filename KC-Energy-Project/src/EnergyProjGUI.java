@@ -81,28 +81,28 @@ public class EnergyProjGUI extends JFrame {
 
                 globalUserName = UserNameField.getText();
                 globalPassword = PasswordField.getText();
-                Dashboard dashboardPanel = new Dashboard();
-                add(dashboardPanel, "dashboardPanel");
-                cardLayout.show(getContentPane(), "dashboardPanel");
+//                Dashboard dashboardPanel = new Dashboard();
+//                add(dashboardPanel, "dashboardPanel");
+//                cardLayout.show(getContentPane(), "dashboardPanel");
 
-////                switch to another panel
-//                CRUDAdmins adminAccount = new CRUDAdmins();
-//                if(adminAccount.login(UserNameField.getText(), PasswordField.getText()) != null){
-//                    globalUserName = UserNameField.getText();
-//                    globalPassword = PasswordField.getText();
-//                    Dashboard dashboardPanel = new Dashboard();
-//                    add(dashboardPanel, "dashboardPanel");
-//                    cardLayout.show(getContentPane(), "dashboardPanel");
-//                }
-//                else{
-//                    JOptionPane.showMessageDialog(null, "Invalid username or password");
-//                }
-//                if(UserNameField.getText().equals("")){
-//                    JOptionPane.showMessageDialog(null, "Please enter your username");
-//                }
-//                if(PasswordField.getText().equals("")){
-//                    JOptionPane.showMessageDialog(null, "Please enter your password");
-//                }
+//                switch to another panel
+                CRUDAdmins adminAccount = new CRUDAdmins();
+                if(adminAccount.login(UserNameField.getText(), PasswordField.getText()) != null){
+                    globalUserName = UserNameField.getText();
+                    globalPassword = PasswordField.getText();
+                    Dashboard dashboardPanel = new Dashboard();
+                    add(dashboardPanel, "dashboardPanel");
+                    cardLayout.show(getContentPane(), "dashboardPanel");
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "Invalid username or password");
+                }
+                if(UserNameField.getText().equals("")){
+                    JOptionPane.showMessageDialog(null, "Please enter your username");
+                }
+                if(PasswordField.getText().equals("")){
+                    JOptionPane.showMessageDialog(null, "Please enter your password");
+                }
 
             }
         });
